@@ -5,7 +5,7 @@ def generate(data, file_name):
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
         box_size=10,
-        border=0,
+        border=2,
     )
     qr.add_data(data)
     qr.make(fit=True)
@@ -14,9 +14,7 @@ def generate(data, file_name):
     img.save(file_name)
     print("QR-Code generated!")
 
+link = input("Enter your URL: ")
+image = input("Enter the filename: ")
 
-
-link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-image = "cupo.jpg"
-
-generate(link, image)
+generate(link, f"{image}.jpg")
